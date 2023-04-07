@@ -6,6 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speedMultipler = 1f;
     public Transform player;
+
+    // bullet
+    public Transform bulletSpawnPos;
+    public Transform bullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +22,13 @@ public class PlayerMovement : MonoBehaviour
     {
         float xPos = Input.GetAxisRaw("Horizontal");
         player.position += Vector3.right * speedMultipler * Time.deltaTime * xPos;
+        
+        if (Input.GetMouseButtonDown(0)) {
+            shoot();
+        }
+    }
+
+    void shoot() {
+        Transform _bullet = Instantiate(bullet, bulletSpawnPos);
     }
 }

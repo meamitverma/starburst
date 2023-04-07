@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2371762104690985534
+--- !u!1 &2881963350050431574
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2371762104690985520}
-  - component: {fileID: 2371762104690985521}
-  - component: {fileID: 7497425044823339623}
-  - component: {fileID: -7731257350736031501}
+  - component: {fileID: 45979574175949864}
+  - component: {fileID: 635623936820740612}
+  - component: {fileID: 5622683139326507594}
+  - component: {fileID: 5161802693422756639}
   m_Layer: 0
-  m_Name: meteor
+  m_Name: Meteor_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2371762104690985520
+--- !u!4 &45979574175949864
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2371762104690985534}
+  m_GameObject: {fileID: 2881963350050431574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2371762104690985521
+--- !u!212 &635623936820740612
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2371762104690985534}
+  m_GameObject: {fileID: 2881963350050431574}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,37 +75,37 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d531c90c3b8cb2641be0ad7f7019b36d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 029e65c6e09704f42b608d2622a67356, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 3, y: 2.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7497425044823339623
+--- !u!114 &5622683139326507594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2371762104690985534}
+  m_GameObject: {fileID: 2881963350050431574}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a527a94c7b9c2c14dbb75663c3990c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 3
---- !u!58 &-7731257350736031501
+--- !u!58 &5161802693422756639
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2371762104690985534}
+  m_GameObject: {fileID: 2881963350050431574}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -114,4 +114,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.22
+  m_Radius: 0.375

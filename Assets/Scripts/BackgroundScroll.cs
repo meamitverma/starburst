@@ -14,8 +14,6 @@ public class BackgroundScroll : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-      Vector2 offset = meshRender.material.mainTextureOffset;
-      offset = offset + new Vector2(0, speed * Time.deltaTime);
-      meshRender.material.mainTextureOffset = offset;
+      meshRender.material.mainTextureOffset += new Vector2(0, speed * Time.deltaTime);
     }
 }

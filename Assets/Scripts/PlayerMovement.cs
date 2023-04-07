@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     // bullet
     public Transform bulletSpawnPos;
-    public Transform bullet;
+    public Transform bulletHolder;
+    public GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void shoot() {
-        Transform _bullet = Instantiate(bullet, bulletSpawnPos);
+        GameObject _bullet = Instantiate(bullet, bulletSpawnPos.position, bullet.transform.rotation, bulletHolder);
     }
 }

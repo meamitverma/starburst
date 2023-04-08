@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public void pauseGame() {
         // slow
         Time.timeScale = 0.7f;
+        Cursor.visible = true;
 
         disableGO();
         pauseMenu.SetActive(true);

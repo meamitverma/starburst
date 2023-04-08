@@ -60,9 +60,9 @@ public class PlayerMovement : MonoBehaviour
 
     void shoot() {
         // play a shooting sound
-        shootSound.Play();
 
         GameObject _bullet = Instantiate(bullet, bulletSpawnPos.position, bullet.transform.rotation, bulletHolder);
+        shootSound.Play();
     }
 
     void findBoundaries () {
@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<GameManager>().pauseGame();
             // play explosion animation
             GameObject expO = Instantiate(explosion, transform.position, transform.rotation);
-            Destroy(expO,1);
+            Destroy(expO,0.6f);
 
             Destroy(gameObject);
         }

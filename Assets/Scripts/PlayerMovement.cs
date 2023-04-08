@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Shooting Properties")]
     float delay = 0.3f;
 
+    [Header("Health")]
+    public GameObject healthUI;
+
 
     // private
     float time = 0f;
@@ -58,5 +61,13 @@ public class PlayerMovement : MonoBehaviour
         maxX = camera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
     }
 
-    
+    public void takeDamage() {
+        health -= 1;
+        healthUI.transform.GetChild(2 - health).gameObject.SetActive(false);
+
+        if (health <= 0) {
+            FindObjectOfType<GameManager>().pauseGame();
+        }
+
+    } 
 }

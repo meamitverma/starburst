@@ -58,7 +58,8 @@ public class Meteor : MonoBehaviour
             // Time.timeScale = 0.05f;
 
             // reload
-            manager.pauseGame();
+            FindObjectOfType<PlayerMovement>().takeDamage();
+            Destroy(gameObject);
             
         }
     }

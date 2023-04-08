@@ -20,11 +20,16 @@ public class PlayerMovement : MonoBehaviour
 
     // private
     float time = 0f;
+    float padding = 0.5f;
+    float minX;
+    float maxX;
+
+    private int health = 3;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        findBoundaries();
     }
 
     // Update is called once per frame
@@ -32,8 +37,10 @@ public class PlayerMovement : MonoBehaviour
     {
         time -= Time.deltaTime;
 
-        float xPos = Input.GetAxisRaw("Horizontal");
-        player.position += Vector3.right * speedMultipler * Time.deltaTime * xPos;
+        float deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speedMultipler;
+        float newXpos = Mathf.Clamp(transform.position.x + deltaX,minX, maxX);
+
+        player.position = new Vector2(newXpos, player.position.y);
         
         if (Input.GetMouseButtonDown(0) && time <= 0) {
             shoot();
@@ -44,4 +51,12 @@ public class PlayerMovement : MonoBehaviour
     void shoot() {
         GameObject _bullet = Instantiate(bullet, bulletSpawnPos.position, bullet.transform.rotation, bulletHolder);
     }
+
+    void findBoundaries () {
+        Camera camera = Camera.main;
+        minX = camera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
+        maxX = camera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
+    }
+
+    
 }

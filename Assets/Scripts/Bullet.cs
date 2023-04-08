@@ -18,4 +18,14 @@ public class Bullet : MonoBehaviour
     {
         transform.position += Vector3.up * speedMultiplier * Time.deltaTime;
     }
+
+    // private void OnCollisionEnter2D(Collision2D col) {
+    //     print(col.collider.name);
+    // }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        col.GetComponent<Meteor>().health -= 1;
+        Destroy(gameObject);
+    }
 }

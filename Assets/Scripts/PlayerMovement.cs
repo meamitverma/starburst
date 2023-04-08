@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Movement")]
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Health")]
     public GameObject healthUI;
 
+    [Header("Explosion Animation")]
+    public GameObject explosion;
 
     // private
     float time = 0f;
@@ -29,10 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
     private int health = 3;
 
+    // audio
+    AudioSource shootSound;
+
     // Start is called before the first frame update
     void Start()
     {
         findBoundaries();
+        shootSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +59,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void shoot() {
+        // play a shooting sound
+        shootSound.Play();
+
         GameObject _bullet = Instantiate(bullet, bulletSpawnPos.position, bullet.transform.rotation, bulletHolder);
     }
 
@@ -66,7 +76,13 @@ public class PlayerMovement : MonoBehaviour
         healthUI.transform.GetChild(2 - health).gameObject.SetActive(false);
 
         if (health <= 0) {
+
             FindObjectOfType<GameManager>().pauseGame();
+            // play explosion animation
+            GameObject expO = Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(expO,1);
+
+            Destroy(gameObject);
         }
 
     } 

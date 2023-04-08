@@ -15,15 +15,15 @@ public class Meteor : MonoBehaviour
     {
         if (transform.CompareTag("small_meteor")) {
             health = 1;
-            scoreMultiplier = 2;
+            scoreMultiplier = 10;
         }
         else if (transform.CompareTag("medium_meteor")) {
             health = 1;
-            scoreMultiplier = 4;
+            scoreMultiplier = 10;
         }
         else if (transform.CompareTag("large_meteor")) {
-            health = 2;
-            scoreMultiplier = 8;
+            health = 3;
+            scoreMultiplier = 20;
         }
 
         manager = FindObjectOfType<GameManager>();

@@ -32,7 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
     private int health = 3;
 
-    // audio
+    [Header("Audio")]
+    public AudioClip explosionSound;
     AudioSource shootSound;
 
     // Start is called before the first frame update
@@ -77,10 +78,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (health <= 0) {
 
+            // play explosion sound
+            shootSound.clip = explosionSound;
+            shootSound.Play();
+
             FindObjectOfType<GameManager>().pauseGame();
             // play explosion animation
             GameObject expO = Instantiate(explosion, transform.position, transform.rotation);
             Destroy(expO,0.6f);
+
 
             Destroy(gameObject);
         }
